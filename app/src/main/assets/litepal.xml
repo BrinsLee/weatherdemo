@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname values="weather"/>
+    <version values="1.0"/>
+    <list>
+        <mapping class="com.brins.weatherdemo.db.Provinces"/>
+        <mapping class="com.brins.weatherdemo.db.Cities"/>
+        <mapping class="com.brins.weatherdemo.db.Countries"/>
+    </list>
+
+</litepal>
