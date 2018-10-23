@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">WeatherDemo</string>
+    <string name="setting">设置</string>
+    <string name="area">选择地区</string>
+    <string name="bodyfeel">天气信息</string>
+    <string name="wet">相对湿度</string>
+    <string name="rain">降水</string>
+    <string name="pressure">气压</string>
+    <string name="wind">风向</string>
+    <string name="visible">能见度</string>
+    <string name="copyright">气象信息由和风天气(HeWeather)提供\n背景图片由必应搜索(bing)提供。百度地图(baidu)提供定位支持</string>
 </resources>

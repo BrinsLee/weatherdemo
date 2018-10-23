@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import com.brins.weatherdemo.db.Cities;
 import com.brins.weatherdemo.db.Countries;
 import com.brins.weatherdemo.db.Provinces;
+import com.brins.weatherdemo.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,6 +73,8 @@ public class Utility {
     }
 
 
+
+
     /**
      * Handle country boolean.
      *
@@ -86,7 +90,7 @@ public class Utility {
                     JSONObject countryobject=countryarray.getJSONObject(i);
                     Countries countries=new Countries();
                     countries.setCountryName(countryobject.getString("name"));
-                    countries.setWeatherId(countryobject.getInt("id"));
+                    countries.setWeatherId(countryobject.getString("weather_id"));
                     countries.setCityId(cityId);
                     countries.save();
                 }
@@ -96,5 +100,18 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    public static Weather handleWather(String response){
+
+        try {
+            JSONObject jsonObject=new JSONObject(response);
+            JSONArray jsonArray=jsonObject.getJSONArray("HeWeather");
+            String weatherContent=jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent,Weather.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -7,7 +7,7 @@ import okhttp3.Request;
 
 public class HttpUtil {
 
-    static void sendRequest(String address,okhttp3.Callback callback){
+     public static void sendRequest(String address,okhttp3.Callback callback){
 
         OkHttpClient client=new OkHttpClient();
         Request request=new Request.Builder().url(address).build();
