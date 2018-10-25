@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherDemo</string>
+    <string name="app_name">天气</string>
     <string name="setting">设置</string>
     <string name="area">选择地区</string>
     <string name="bodyfeel">天气信息</string>

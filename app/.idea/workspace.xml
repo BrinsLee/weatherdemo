@@ -18,112 +18,17 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="991adb33-bcf2-4451-a15e-04a77701b76c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___E__Androidwokespace_WeatherDemo_app_libs_BaiduLBS_Android_jar_unspecified_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/libs/BaiduLBS_Android.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/Choosearea.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/MyLocation.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/fragment/Fragment_area.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/fragment/Fragment_show.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/AQI.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Basic.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/ForeCast.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Now.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Suggestion.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Weather.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/RequestFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/arm64-v8a/libBaiduMapSDK_base_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/arm64-v8a/libBaiduMapSDK_map_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/arm64-v8a/liblocSDK7b.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi-v7a/libBaiduMapSDK_base_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi-v7a/libBaiduMapSDK_map_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi-v7a/liblocSDK7b.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi/libBaiduMapSDK_base_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi/libBaiduMapSDK_map_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/armeabi/liblocSDK7b.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86/libBaiduMapSDK_base_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86/libBaiduMapSDK_map_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86/liblocSDK7b.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86_64/libBaiduMapSDK_base_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86_64/libBaiduMapSDK_map_v5_2_0.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/jniLibs/x86_64/liblocSDK7b.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_add_location.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_back.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_cloud_download.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_sunny.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_choosearea.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/choosearea.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_show.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/gvitem.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/menu/toolbarmenu.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_litepal_android_core_1_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_litepal_android_core_1_5_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/display/27597416469101169.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_clound.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/assets/litepal.xml" afterPath="$PROJECT_DIR$/src/main/assets/litepal.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Countries.java" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Countries.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/HttpUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/HttpUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/Utility.java" afterPath="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/Utility.java" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_show.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_show.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -180,23 +85,21 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="76" column="59" lean-forward="false" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
+            <state relative-caret-position="3003">
+              <caret line="203" column="77" lean-forward="false" selection-start-line="203" selection-start-column="77" selection-end-line="203" selection-end-column="77" />
               <folding>
                 <element signature="e#4215#4216#0" expanded="true" />
                 <element signature="e#4266#4267#0" expanded="true" />
-                <element signature="e#4704#5448#0" expanded="true" />
-                <element signature="e#5447#5448#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ic_cloud_download.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ic_cloud_download.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/drawable/ic_cloud_download.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -205,7 +108,7 @@
       <file leaf-file-name="Fragment_show.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/fragment/Fragment_show.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="1551">
               <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -219,7 +122,7 @@
       <file leaf-file-name="Utility.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/Utility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="2640">
               <caret line="92" column="82" lean-forward="false" selection-start-line="92" selection-start-column="82" selection-end-line="92" selection-end-column="82" />
               <folding />
             </state>
@@ -232,7 +135,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="-297">
               <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding />
             </state>
@@ -242,9 +145,26 @@
       <file leaf-file-name="Weather.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Weather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="264">
               <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_show.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_show.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <folding>
+                <element signature="e#1395#1413#0" expanded="true" />
+                <element signature="e#1795#1808#0" expanded="true" />
+                <element signature="e#2096#2110#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -252,8 +172,8 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="231">
+              <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -269,20 +189,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cities.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Cities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Countries.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Countries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="759">
               <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
               <folding>
                 <element signature="e#544#545#0" expanded="true" />
@@ -2216,14 +2126,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/RequestFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Countries.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/Utility.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_show.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_show.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="326" />
+    <option name="x" value="212" />
+    <option name="y" value="3" />
     <option name="width" value="1529" />
     <option name="height" value="1038" />
   </component>
@@ -2245,8 +2156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2399,8 +2308,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2409,7 +2320,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="8d814c8a" />
+    <property name="device.picker.selection" value="Nexus_6P_API_24" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -2419,6 +2330,7 @@
       <recent name="com.brins.weatherdemo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Androidwokespace\WeatherDemo\app\src\main\res\drawable\display" />
       <recent name="E:\Androidwokespace\WeatherDemo\app\src\main\jniLibs" />
       <recent name="E:\Androidwokespace\WeatherDemo\app\libs" />
       <recent name="E:\Androidwokespace\WeatherDemo\app\src\main\assets" />
@@ -2643,8 +2555,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="326" y="0" width="1529" height="1038" extended-state="0" />
-    <editor active="true" />
+    <frame x="212" y="3" width="1529" height="1038" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2653,21 +2564,21 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17807487" sideWeight="0.50643086" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.185567" sideWeight="0.48969072" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30652922" sideWeight="0.48969072" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2437276" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26491648" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3539519" sideWeight="0.49356914" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3539519" sideWeight="0.49356914" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45454547" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973261" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27682403" sideWeight="0.5103093" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976415" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2891,7 +2802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36102">
           <caret line="1148" column="0" lean-forward="false" selection-start-line="1148" selection-start-column="0" selection-end-line="1148" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2899,7 +2809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2923,20 +2832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <marker date="1531452043158" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531452043158" expanded="false" signature="211:222" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="258:264" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="313:365" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="394:405" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="441:447" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="514:566" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="636:688" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="823:875" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="948:1000" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1053:1216" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1251:1287" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2944,62 +2839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="149" column="1" lean-forward="false" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
-          <folding>
-            <marker date="1531452043158" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531452043158" expanded="false" signature="200:211" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="247:253" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="300:311" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="347:353" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="388:399" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="435:441" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="504:556" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="600:611" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="647:653" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="699:710" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="746:752" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="803:814" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="850:856" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="898:909" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="945:951" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1001:1012" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1048:1054" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="1117:1169" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1240:1292" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1375:1427" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="1470:1481" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1517:1523" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="1592:1644" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1727:1779" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1848:1900" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="1957:1968" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2004:2010" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2061:2072" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2108:2114" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="2180:2232" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="2283:2294" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2330:2336" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2389:2400" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2436:2442" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="2521:2573" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="2652:2704" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="2781:2833" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="2904:2956" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="3022:3074" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="3122:3133" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="3169:3175" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="3239:3291" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="3356:3408" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="3456:3467" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="3503:3509" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="3573:3625" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="3662:3673" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="3709:3715" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="3770:3781" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="3817:3823" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="3853:3864" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="3900:3906" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="3938:3990" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3007,39 +2846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1531452043158" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531452043158" expanded="false" signature="197:208" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="244:250" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="284:295" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="331:337" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="381:392" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="428:434" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="476:487" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="523:529" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="560:571" ph=" { " />
-            <marker date="1531452043158" expanded="true" signature="607:613" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="650:661" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="697:703" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="745:756" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="792:798" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="836:847" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="883:889" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="941:952" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="988:994" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1018:1029" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1065:1071" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1101:1112" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1148:1154" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1185:1196" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1232:1238" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1274:1285" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1321:1327" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1376:1387" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1423:1429" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1459:1470" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1506:1512" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3047,61 +2853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
-          <folding>
-            <marker date="1539326258000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1539326258000" expanded="false" signature="142:745" ph="..." />
-            <marker date="1539326258000" expanded="true" signature="2836:3065" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="3134:3345" ph="{...}" />
-            <marker date="1539326258000" expanded="false" signature="3393:3404" ph=" { " />
-            <marker date="1539326258000" expanded="false" signature="3418:3424" ph=" }" />
-            <marker date="1539326258000" expanded="true" signature="3482:3840" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="3891:4286" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="4321:4861" ph="{...}" />
-            <marker date="1539326258000" expanded="false" signature="4893:4904" ph=" { " />
-            <marker date="1539326258000" expanded="false" signature="4918:4924" ph=" }" />
-            <marker date="1539326258000" expanded="false" signature="4970:4981" ph=" { " />
-            <marker date="1539326258000" expanded="false" signature="4995:5001" ph=" }" />
-            <marker date="1539326258000" expanded="false" signature="5033:5044" ph=" { " />
-            <marker date="1539326258000" expanded="false" signature="5059:5065" ph=" }" />
-            <marker date="1539326258000" expanded="true" signature="5093:5195" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="5264:5689" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="5739:6204" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="6259:6456" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="6491:6783" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="6839:6904" ph="{...}" />
-            <marker date="1539326258000" expanded="false" signature="6948:6959" ph=" { " />
-            <marker date="1539326258000" expanded="false" signature="6990:6996" ph=" }" />
-            <marker date="1539326258000" expanded="true" signature="7022:7130" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="7153:8060" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="8085:8215" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="8238:9508" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="9543:11140" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="11165:12790" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="12796:12814" ph="/**...*/" />
-            <marker date="1539326258000" expanded="true" signature="12881:13136" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="13171:13486" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="13492:13510" ph="/**...*/" />
-            <marker date="1539326258000" expanded="true" signature="13579:13834" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="13910:14168" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="14203:14534" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="14612:14870" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="14905:15165" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="15208:15540" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="15575:15819" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="15842:17120" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="17165:17634" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="17665:18764" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="18799:19170" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="19255:19490" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="19528:20297" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="20350:20574" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="20619:25600" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="20721:20803" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="20853:25594" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="25642:26670" ph="{...}" />
-            <marker date="1539326258000" expanded="true" signature="25664:25675" ph="{}" />
-            <marker date="1539326258000" expanded="true" signature="25703:26664" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3109,53 +2860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="90" column="16" lean-forward="false" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
-          <folding>
-            <marker date="1531452043158" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1531452043158" expanded="false" signature="438:449" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="485:491" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="527:538" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="574:580" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="628:639" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="675:681" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="726:737" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="773:779" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="844:896" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="951:962" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="998:1004" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="1072:1124" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1200:1252" ph="{...}" />
-            <marker date="1531452043158" expanded="true" signature="1340:1392" ph="{...}" />
-            <marker date="1531452043158" expanded="false" signature="1419:1430" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1466:1472" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1509:1520" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1556:1562" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1589:1600" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1636:1642" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1685:1696" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1732:1738" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1770:1781" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1817:1823" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1858:1869" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1905:1911" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="1940:1951" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="1987:1993" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2023:2034" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2070:2076" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2114:2125" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2161:2167" ph=" }" />
-            <marker date="1531452043158" expanded="true" signature="2199:2210" ph=" { " />
-            <marker date="1531452043158" expanded="true" signature="2246:2252" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2289:2300" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2336:2342" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2390:2401" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2437:2443" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2473:2484" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2520:2526" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2561:2572" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2608:2614" ph=" }" />
-            <marker date="1531452043158" expanded="false" signature="2669:2680" ph=" { " />
-            <marker date="1531452043158" expanded="false" signature="2716:2722" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3238,7 +2942,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/db/Countries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="759">
           <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
           <folding>
             <element signature="e#544#545#0" expanded="true" />
@@ -3249,26 +2953,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/util/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="2640">
           <caret line="92" column="82" lean-forward="false" selection-start-line="92" selection-start-column="82" selection-end-line="92" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_show.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/ic_cloud_download.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        <state relative-caret-position="165">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/fragment/Fragment_show.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="1551">
           <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3280,7 +2981,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/gson/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="264">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
@@ -3288,9 +2989,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="231">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3003">
+          <caret line="203" column="77" lean-forward="false" selection-start-line="203" selection-start-column="77" selection-end-line="203" selection-end-column="77" />
+          <folding>
+            <element signature="e#4215#4216#0" expanded="true" />
+            <element signature="e#4266#4267#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3299,30 +3011,24 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="-297">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/brins/weatherdemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="76" column="59" lean-forward="false" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
-          <folding>
-            <element signature="e#4215#4216#0" expanded="true" />
-            <element signature="e#4266#4267#0" expanded="true" />
-            <element signature="e#4704#5448#0" expanded="true" />
-            <element signature="e#5447#5448#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_show.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/ic_cloud_download.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="405">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+          <folding>
+            <element signature="e#1395#1413#0" expanded="true" />
+            <element signature="e#1795#1808#0" expanded="true" />
+            <element signature="e#2096#2110#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

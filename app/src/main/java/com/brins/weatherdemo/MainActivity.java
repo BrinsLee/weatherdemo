@@ -198,10 +198,10 @@ public class MainActivity extends AppCompatActivity {
         public void onReceiveLocation(BDLocation bdLocation) {
 
             StringBuilder location =new StringBuilder();
-            location.append("国家：").append(bdLocation.getCountry()).append("/n");
-            location.append("省份：").append(bdLocation.getProvince()).append("/n");
-            location.append("城市：").append(bdLocation.getCity()).append("/n");
-            location.append("区县：").append(bdLocation.getDistrict()).append("/n");
+            location.append("国家：").append(bdLocation.getCountry()).append("\n");
+            location.append("省份：").append(bdLocation.getProvince()).append("\n");
+            location.append("城市：").append(bdLocation.getCity()).append("\n");
+            location.append("区县：").append(bdLocation.getDistrict()).append("\n");
             City=bdLocation.getCity().toString().substring(0,2);
             Province=bdLocation.getProvince().toString().substring(0,2);
             Log.i("省份",Province);
