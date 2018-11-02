@@ -17,9 +17,12 @@ import android.widget.Toast;
 
 import com.brins.weatherdemo.MainActivity;
 import com.brins.weatherdemo.R;
+import com.brins.weatherdemo.gson.ForeCast;
 import com.brins.weatherdemo.gson.Weather;
 import com.brins.weatherdemo.util.HttpUtil;
 import com.brins.weatherdemo.util.Utility;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -33,6 +36,8 @@ public class Fragment_show extends Fragment {
     private ImageView iv_weather;
     private TextView tv_info;
     public String weatherId;
+    private TextView tv_wet;
+    private TextView tv_feel;
     //private TextView tv_wet,tv_rain,tv_pressure,tv_wind,tv_visible;
 
 
@@ -53,7 +58,8 @@ public class Fragment_show extends Fragment {
          iv_weather=view.findViewById(R.id.iv_weather);
          tv_temperature=view.findViewById(R.id.tv_temp);
          tv_info=view.findViewById(R.id.info);
-
+         tv_wet=view.findViewById(R.id.wet);
+         tv_feel=view.findViewById(R.id.feel);
     }
 
     @Override
@@ -72,7 +78,7 @@ public class Fragment_show extends Fragment {
 
     private void requestWeather(final String weatherId) {
         String url="http://guolin.tech/api/weather?cityid="
-                +weatherId+"&key=34ea9718bb664420ba5b7ce53e1d160e";
+                +weatherId+"&key=34ea9718bb664420ba5b7ce53e1d160e";//http://guolin.tech/api/weather?cityid=CN101280101&key=34ea9718bb664420ba5b7ce53e1d160e
         Log.i("url:",url);
         HttpUtil.sendRequest(url, new Callback() {
             @Override
@@ -129,13 +135,25 @@ public class Fragment_show extends Fragment {
         String degree=weather
                 .now.temperature+"℃";
         String weatherInfo=weather.now.more.info;
+        String humiditytext=weather.now.humidity;
+        String feel=weather.now.feel;
         tv_temperature.setText(degree);
         tv_info.setText(weatherInfo);
-        Log.i("天气信息：",weatherInfo);
+        tv_wet.setText("相对湿度:"+humiditytext+"%");
+        tv_feel.setText("体感温度:"+feel+"℃");
+        MainActivity.forcast.removeAllViews();
+        for (ForeCast foreCast:weather.foreCastList){
+            View view=LayoutInflater.from(getActivity()).inflate(R.layout.forcast,MainActivity.forcast,false);
+            TextView datetext=view.findViewById(R.id.date_text);
+            TextView infotext=view.findViewById(R.id.info_text);
+            TextView maxtext=view.findViewById(R.id.maxtemp_text);
+            TextView mintext=view.findViewById(R.id.mintemp_text);
+            datetext.setText(foreCast.Date);
+            infotext.setText(foreCast.more.info);
+            maxtext.setText(foreCast.temperature.max+"℃");
+            mintext.setText(foreCast.temperature.min+"℃");
+            MainActivity.forcast.addView(view);
+        }
     }
 
-    public String setweatherId(String weatherId){
-
-        return weatherId;
-    }
 }

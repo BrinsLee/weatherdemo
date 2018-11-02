@@ -3,6 +3,7 @@ package com.brins.weatherdemo.gson;
 import com.google.gson.annotations.SerializedName;
 
 public class ForeCast {
+    @SerializedName("date")
     public String Date;
     @SerializedName("tmp")
     public Temperature temperature;

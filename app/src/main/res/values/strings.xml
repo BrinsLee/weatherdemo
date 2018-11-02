@@ -9,4 +9,10 @@
     <string name="wind">风向</string>
     <string name="visible">能见度</string>
     <string name="copyright">气象信息由和风天气(HeWeather)提供\n背景图片由必应搜索(bing)提供。百度地图(baidu)提供定位支持</string>
+    <string name="daily">每日</string>
+    <string name="air">空气质量</string>
+    <string name="today">今天</string>
+    <string name="aftertomorrow">后天</string>
+    <string name="tomorrow">明天</string>
+    <string name="feel">体感温度</string>
 </resources>

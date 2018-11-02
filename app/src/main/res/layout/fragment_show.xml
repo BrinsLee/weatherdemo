@@ -54,10 +54,10 @@
             android:layout_margin="5dp"/>
 
     <TextView
-        android:id="@+id/wind"
+        android:id="@+id/feel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wind"
+        android:text="@string/feel"
         android:textSize="15sp"
         android:textColor="@android:color/white"
         android:layout_margin="5dp"/>

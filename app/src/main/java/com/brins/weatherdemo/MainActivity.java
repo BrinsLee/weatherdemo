@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
@@ -19,6 +21,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -62,7 +67,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
 
     private LocationClient locationClient;
-    static TextView tv;
+    //static TextView tv;
     @BindView(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @BindView(R.id.time1)
@@ -70,30 +75,46 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.appbar)
     AppBarLayout appbar;
     List<MyLocation> myLocations;
+    public static LinearLayout forcast;
     MyLocation myLocation=null;
     static String City;
     static String Province;
     static String District;
     final String BINGURL="http://guolin.tech/api/bing_pic";
+    private Fragment_show fragment_show;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);//实现状态栏沉浸
+        forcast=findViewById(R.id.forcast_layout);
         myLocation=new MyLocation();
+        if (Build.VERSION.SDK_INT>=21){
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);//实现状态栏沉浸
+        }
+
+        //设置Toolbar
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ActionBar actionBar=getSupportActionBar();
+        //获取时间
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("MM月dd日 HH:mm");
         Date date=new Date(System.currentTimeMillis());
         time1.setText(simpleDateFormat.format(date));
-        ActionBar actionBar=getSupportActionBar();
-        tv=findViewById(R.id.tv);
+        //tv=findViewById(R.id.tv);//准备删除
+        //定位方法
         initLocation();
+        if (savedInstanceState!=null){
+
+            getFragmentManager().beginTransaction().remove(fragment_show).commit();
+            fragment_show=new Fragment_show(savedInstanceState.getString("weatherid"));
+            getFragmentManager().beginTransaction().add(R.id.showlayout,fragment_show).commit();
+        }
+        //获取请求权限
         List<String> permissionlist=new ArrayList<>();
         requestpermissions();
+        //使用sharedpreferences存储必应图片
         SharedPreferences pref=getSharedPreferences("bingpic",MODE_PRIVATE);
-
         String bingPic=pref.getString("bing_pic",null);
         if (bingPic!=null){
             Glide.with(this).load(bingPic)
@@ -110,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 从网上加载每日一图
+     */
     private void loadBingPic() {
 
         HttpUtil.sendRequest(BINGURL, new Callback() {
@@ -145,13 +169,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * 百度定位，每五秒刷新一次位置
+     */
     private void initLocation() {
         locationClient=new LocationClient(getApplicationContext());
         locationClient.registerLocationListener(new MyLocationClickListener());
         LocationClientOption option=new LocationClientOption();
         option.setIsNeedAddress(true);
-        option.setScanSpan(5000);
+        option.setScanSpan(300000);
         locationClient.setLocOption(option);
 
     }
@@ -214,20 +240,25 @@ public class MainActivity extends AppCompatActivity {
             myLocation.save();
             requestWeatherId(City);
             toolbar.setTitle(District);
-            tv.setText(location.toString());
+            //tv.setText(location.toString());
 
         }
     }
 
+    /**
+     * @param city ：传入城市，用于获取weatherid
+     */
     private void requestWeatherId(String city) {
         List<Cities> cityList=DataSupport.where("cityName=?",city).find(Cities.class);
         if (cityList.size()>0){
 
             int cityid=cityList.get(0).getId();
             String weatherId=(DataSupport.where("cityId=?",String .valueOf(cityid)).find(Countries.class).get(0).getWeatherId());
-            Log.i("weatherId",weatherId);
-            Fragment_show fragment_show=new Fragment_show(weatherId);
+            fragment_show=new Fragment_show(weatherId);
             getFragmentManager().beginTransaction().add(R.id.showlayout,fragment_show).commit();
+            Bundle weatherbundle =new Bundle();
+            weatherbundle.putString("weatherid",weatherId);
+            onSaveInstanceState(weatherbundle);
         }
 
     }
@@ -267,5 +298,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         locationClient.stop();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Build.VERSION.SDK_INT>=21){
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);//实现状态栏沉浸
+        }
     }
 }
