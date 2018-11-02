@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0023e6b-3369-4512-a5dd-b6dcff78d0cb" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/air.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/res/layout/forcast.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_0_2.xml" />
@@ -2024,8 +2025,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="638" />
-    <option name="y" value="26" />
+    <option name="x" value="296" />
+    <option name="y" value="9" />
     <option name="width" value="1314" />
     <option name="height" value="1030" />
   </component>
@@ -2340,7 +2341,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="638" y="26" width="1314" height="1030" extended-state="0" />
+    <frame x="296" y="9" width="1314" height="1030" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
