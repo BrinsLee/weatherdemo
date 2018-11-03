@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < grantResults.length; i++) {
                     if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
                         Toast.makeText(MainActivity.this, "请允许使用权限", Toast.LENGTH_SHORT).show();
-                        break;
+                        return;
                     }
                 }
                 requestLocation();
