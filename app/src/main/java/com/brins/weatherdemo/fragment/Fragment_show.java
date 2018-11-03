@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ import com.brins.weatherdemo.util.Utility;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -38,6 +41,8 @@ public class Fragment_show extends Fragment {
     public String weatherId;
     private TextView tv_wet;
     private TextView tv_feel;
+    private TextView tv_update;
+    private ImageButton bt_update;
     //private TextView tv_wet,tv_rain,tv_pressure,tv_wind,tv_visible;
 
 
@@ -60,6 +65,14 @@ public class Fragment_show extends Fragment {
          tv_info=view.findViewById(R.id.info);
          tv_wet=view.findViewById(R.id.wet);
          tv_feel=view.findViewById(R.id.feel);
+         tv_update=view.findViewById(R.id.update);
+         bt_update=view.findViewById(R.id.update_bt);
+         bt_update.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 requestWeather(weatherId);
+             }
+         });
     }
 
     @Override
@@ -101,7 +114,6 @@ public class Fragment_show extends Fragment {
             public void onResponse(Call call, Response response) throws IOException {
                 final  String responseText=response.body().string();
                 final Weather weather=Utility.handleWather(responseText);
-                Log.i("text",responseText);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -110,10 +122,11 @@ public class Fragment_show extends Fragment {
                                     .getDefaultSharedPreferences(getActivity()).edit();
                                     editor.putString("weather",responseText);
                                     editor.apply();
-                                    showWeather(weather);
+                                    if(showWeather(weather))
+                                        Toast.makeText(getActivity(), "刷新完成", Toast.LENGTH_SHORT).show();;
 
                         }else {
-                            Snackbar.make(getView(),"获取数据失败222",Snackbar.LENGTH_SHORT).setAction("重试", new View.OnClickListener() {
+                            Snackbar.make(getView(),"获取数据失败2333",Snackbar.LENGTH_SHORT).setAction("重试", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     requestWeather(weatherId);
@@ -128,8 +141,13 @@ public class Fragment_show extends Fragment {
 
     }
 
-    private void showWeather(Weather weather) {
+    private Boolean showWeather(Weather weather) {
 
+        if (tv_temperature.getText()!=null){
+            tv_temperature.setText(" ");
+            tv_update.setText(" ");
+            tv_info.setText(" ");
+        }
         String CityName=weather.basic.cityName;
         String updateTime=weather.basic.update.updateTime;
         String degree=weather
@@ -137,10 +155,18 @@ public class Fragment_show extends Fragment {
         String weatherInfo=weather.now.more.info;
         String humiditytext=weather.now.humidity;
         String feel=weather.now.feel;
+        String updated=weather.basic.update.updateTime.split(" ")[1];
         tv_temperature.setText(degree);
         tv_info.setText(weatherInfo);
+        if (weatherInfo.equals("晴")){
+            iv_weather.setImageResource(R.drawable.ic_sunny);
+        }else if (weatherInfo.equals("多云")||weatherInfo.equals("阴"))
+        {
+            iv_weather.setImageResource(R.drawable.ic_clound);
+        }else iv_weather.setImageResource(R.drawable.ic_rain);
         tv_wet.setText("相对湿度:"+humiditytext+"%");
         tv_feel.setText("体感温度:"+feel+"℃");
+        tv_update.setText("  已更新 "+updated);
         MainActivity.forcast.removeAllViews();
         for (ForeCast foreCast:weather.foreCastList){
             View view=LayoutInflater.from(getActivity()).inflate(R.layout.forcast,MainActivity.forcast,false);
@@ -154,6 +180,7 @@ public class Fragment_show extends Fragment {
             mintext.setText(foreCast.temperature.min+"℃");
             MainActivity.forcast.addView(view);
         }
+        return true;
     }
 
 }

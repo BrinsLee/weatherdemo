@@ -12,12 +12,15 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,8 +42,10 @@ import com.brins.weatherdemo.db.Countries;
 import com.brins.weatherdemo.db.MyLocation;
 import com.brins.weatherdemo.fragment.Fragment_area;
 import com.brins.weatherdemo.fragment.Fragment_show;
+import com.brins.weatherdemo.gson.Weather;
 import com.brins.weatherdemo.util.HttpUtil;
 import com.brins.weatherdemo.util.RequestFactory;
+import com.brins.weatherdemo.util.Utility;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -74,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
      TextView time1;
     @BindView(R.id.appbar)
     AppBarLayout appbar;
+    @BindView(R.id.airlayout)
+    LinearLayout airlayout;
     List<MyLocation> myLocations;
     public static LinearLayout forcast;
     MyLocation myLocation=null;
@@ -101,14 +108,15 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("MM月dd日 HH:mm");
         Date date=new Date(System.currentTimeMillis());
         time1.setText(simpleDateFormat.format(date));
-        //tv=findViewById(R.id.tv);//准备删除
         //定位方法
         initLocation();
-        if (savedInstanceState!=null){
+        SharedPreferences sha=PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        final String weatherid=sha.getString("weatherid",null);
+        if (weatherid!=null){
 
-            getFragmentManager().beginTransaction().remove(fragment_show).commit();
-            fragment_show=new Fragment_show(savedInstanceState.getString("weatherid"));
-            getFragmentManager().beginTransaction().add(R.id.showlayout,fragment_show).commit();
+            //getFragmentManager().beginTransaction().remove(fragment_show).commit();
+            fragment_show=new Fragment_show(weatherid);
+            getFragmentManager().beginTransaction().replace(R.id.showlayout,fragment_show).commit();
         }
         //获取请求权限
         List<String> permissionlist=new ArrayList<>();
@@ -129,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
             loadBingPic();
         }
+
     }
 
     /**
@@ -177,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         locationClient.registerLocationListener(new MyLocationClickListener());
         LocationClientOption option=new LocationClientOption();
         option.setIsNeedAddress(true);
-        option.setScanSpan(300000);
+        option.setScanSpan(5000);
         locationClient.setLocOption(option);
 
     }
@@ -256,11 +265,49 @@ public class MainActivity extends AppCompatActivity {
             String weatherId=(DataSupport.where("cityId=?",String .valueOf(cityid)).find(Countries.class).get(0).getWeatherId());
             fragment_show=new Fragment_show(weatherId);
             getFragmentManager().beginTransaction().add(R.id.showlayout,fragment_show).commit();
-            Bundle weatherbundle =new Bundle();
-            weatherbundle.putString("weatherid",weatherId);
-            onSaveInstanceState(weatherbundle);
+            SharedPreferences.Editor editor= PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
+                    .edit();
+            editor.putString("weatherid",weatherId);
+            editor.apply();
+            air(weatherId);
+
         }
 
+    }
+
+    private void air(final String weatherId) {
+
+        String url="http://guolin.tech/api/weather?cityid="
+                +weatherId+"&key=34ea9718bb664420ba5b7ce53e1d160e";
+        HttpUtil.sendRequest(url, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Toast.makeText(MainActivity.this,"获取数据失败。",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final  String responseText=response.body().string();
+                final Weather weather= Utility.handleWather(responseText);
+                if (weather!=null){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            View v= LayoutInflater.from(MainActivity.this).inflate(R.layout.air,airlayout,false);
+                            TextView tvquentity=v.findViewById(R.id.airquentity);
+                            TextView tvaqi=v.findViewById(R.id.aqi);
+                            TextView tvpm25=v.findViewById(R.id.pm25);
+                            tvquentity.setText(weather.aqi.city.qlty);
+                            tvaqi.setText("AQI指数\n"+weather.aqi.city.aqi);
+                            tvpm25.setText("PM2.5\n"+weather.aqi.city.pm25);
+                            airlayout.addView(v);
+
+                        }
+                    });
+                }
+
+            }
+        });
     }
 
     private void setToolbarTitle(final String district) {

@@ -2,7 +2,7 @@
     <string name="app_name">天气</string>
     <string name="setting">设置</string>
     <string name="area">选择地区</string>
-    <string name="bodyfeel">天气信息</string>
+    <string name="info">天气信息</string>
     <string name="wet">相对湿度</string>
     <string name="rain">降水</string>
     <string name="pressure">气压</string>
@@ -15,4 +15,5 @@
     <string name="aftertomorrow">后天</string>
     <string name="tomorrow">明天</string>
     <string name="feel">体感温度</string>
+    <string name="update">已更新</string>
 </resources>

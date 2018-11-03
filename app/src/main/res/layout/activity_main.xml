@@ -142,13 +142,11 @@
                     android:layout_marginTop="5dp"
                     />
             <LinearLayout
+                android:id="@+id/airlayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginTop="15dp">
-                <include
-                    android:id="@+id/quentity"
-                    layout="@layout/air"/>
             </LinearLayout>
 
         </LinearLayout>
