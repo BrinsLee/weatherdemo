@@ -36,9 +36,30 @@
                     android:layout_height="200dp"
                     android:layout_marginTop="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="40dp">
+                    android:layout_marginBottom="20dp">
 
                 </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:text="@string/update"
+                    android:layout_margin="5dp"
+                    android:layout_centerHorizontal="true"/>
+                <ImageButton
+                    android:id="@+id/update_bt"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_refresh"
+                    android:layout_toRightOf="@id/update"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
 
                 <TextView
                     android:id="@+id/time1"

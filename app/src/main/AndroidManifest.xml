@@ -24,7 +24,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="8CpG2DWWErbtNsRm2qsSmfRVYXkfpv7L" />
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,9 +37,16 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".Choosearea"></activity>
+        <activity android:name=".Choosearea" />
+
+        <service
+            android:name=".services.ServiceRequest"
+            android:enabled="true"
+            android:exported="true">
+
+        </service>
     </application>
 
 </manifest>

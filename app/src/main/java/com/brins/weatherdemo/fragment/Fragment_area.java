@@ -14,22 +14,16 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.brins.weatherdemo.MainActivity;
 import com.brins.weatherdemo.R;
 import com.brins.weatherdemo.db.Cities;
 import com.brins.weatherdemo.db.Countries;
 import com.brins.weatherdemo.db.Provinces;
 import com.brins.weatherdemo.util.HttpUtil;
 import com.brins.weatherdemo.util.Utility;
-
 import org.litepal.crud.DataSupport;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

@@ -3,17 +3,24 @@ package com.brins.weatherdemo;
 import android.Manifest;
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.IBinder;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -43,6 +50,7 @@ import com.brins.weatherdemo.db.MyLocation;
 import com.brins.weatherdemo.fragment.Fragment_area;
 import com.brins.weatherdemo.fragment.Fragment_show;
 import com.brins.weatherdemo.gson.Weather;
+import com.brins.weatherdemo.services.ServiceRequest;
 import com.brins.weatherdemo.util.HttpUtil;
 import com.brins.weatherdemo.util.RequestFactory;
 import com.brins.weatherdemo.util.Utility;
@@ -89,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
     static String District;
     final String BINGURL="http://guolin.tech/api/bing_pic";
     private Fragment_show fragment_show;
+    private ServiceRequest serviceRequest;
+    private ServiceRequest.MyBinder myBinder;
+    private boolean mBound=false;
+    private static Intent startService;
+    private static ServiceConnection connection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,13 +124,26 @@ public class MainActivity extends AppCompatActivity {
         time1.setText(simpleDateFormat.format(date));
         //定位方法
         initLocation();
+         connection=new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+                myBinder=(ServiceRequest.MyBinder)iBinder;
+                serviceRequest=myBinder.getService();
+                mBound=true;
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName componentName) {
+                Toast.makeText(MainActivity.this,"请求数据失败请手动刷新。",Toast.LENGTH_SHORT).show();
+                mBound=false;
+            }
+        };
+
         SharedPreferences sha=PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         final String weatherid=sha.getString("weatherid",null);
         if (weatherid!=null){
+            StartService(weatherid);
 
-            //getFragmentManager().beginTransaction().remove(fragment_show).commit();
-            fragment_show=new Fragment_show(weatherid);
-            getFragmentManager().beginTransaction().replace(R.id.showlayout,fragment_show).commit();
         }
         //获取请求权限
         List<String> permissionlist=new ArrayList<>();
@@ -138,6 +165,19 @@ public class MainActivity extends AppCompatActivity {
             loadBingPic();
         }
 
+    }
+
+    public void StartService(String weatherid) {
+
+        startService=new Intent(MainActivity.this,ServiceRequest.class);
+        startService.putExtra("weatherid",weatherid);
+        bindService(startService,connection, Context.BIND_AUTO_CREATE);
+        String responseText=PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getString("weatherupdate",null);
+        android.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+            /*fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.remove(fragment_show).commit();*/
+        fragment_show=new Fragment_show(responseText);
+        getFragmentManager().beginTransaction().replace(R.id.showlayout,fragment_show).commit();
     }
 
     /**
@@ -232,15 +272,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceiveLocation(BDLocation bdLocation) {
 
-            StringBuilder location =new StringBuilder();
-            location.append("国家：").append(bdLocation.getCountry()).append("\n");
-            location.append("省份：").append(bdLocation.getProvince()).append("\n");
-            location.append("城市：").append(bdLocation.getCity()).append("\n");
-            location.append("区县：").append(bdLocation.getDistrict()).append("\n");
             City=bdLocation.getCity().toString().substring(0,2);
             Province=bdLocation.getProvince().toString().substring(0,2);
-            Log.i("省份",Province);
-            Log.i("城市",City);
             RequestFactory.queryProvinces(Province);
             District=bdLocation.getDistrict();
             myLocation.setCity(City);
@@ -263,13 +296,14 @@ public class MainActivity extends AppCompatActivity {
 
             int cityid=cityList.get(0).getId();
             String weatherId=(DataSupport.where("cityId=?",String .valueOf(cityid)).find(Countries.class).get(0).getWeatherId());
-            fragment_show=new Fragment_show(weatherId);
-            getFragmentManager().beginTransaction().add(R.id.showlayout,fragment_show).commit();
             SharedPreferences.Editor editor= PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
                     .edit();
             editor.putString("weatherid",weatherId);
             editor.apply();
             air(weatherId);
+            if (!mBound) {
+                StartService(weatherId);
+            }
 
         }
 
@@ -282,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
         HttpUtil.sendRequest(url, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                Looper.prepare();
                 Toast.makeText(MainActivity.this,"获取数据失败。",Toast.LENGTH_SHORT).show();
             }
 
@@ -308,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }//准备精简掉
 
     private void setToolbarTitle(final String district) {
 
@@ -344,6 +379,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unbindService(connection);
         locationClient.stop();
     }
 
