@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#6173bf</color>
     <color name="colorAccent">#FF4081</color>
     <color name="statubar">#00ffffff</color>
+    <color name="divider">#ceffffff</color>
+    <color name="card">#00ffffff</color>
 </resources>

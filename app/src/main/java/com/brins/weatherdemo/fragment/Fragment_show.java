@@ -75,7 +75,6 @@ public class Fragment_show extends Fragment {
             tv_update.setText(" ");
             tv_info.setText(" ");
         }*/
-
         String degree=weather
                 .now.temperature+"℃";
         String weatherInfo=weather.now.more.info;

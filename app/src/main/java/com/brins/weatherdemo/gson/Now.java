@@ -16,10 +16,15 @@ public class Now {
     @SerializedName("hum")
     public String humidity;
 
-    @SerializedName("pcpn")
+    @SerializedName("pcpn")//降水
     public String pcpn;
-    @SerializedName("wind_dir")
+    @SerializedName("wind_dir")//风向
     public String wind_dir;
-    @SerializedName("wind_sc")
+    @SerializedName("wind_sc")//风级
     public String wind_sc;
+    @SerializedName("wind_spd")//风速km
+    public String wind_speed;
+    @SerializedName("pres")//气压
+    public String press;
+
 }

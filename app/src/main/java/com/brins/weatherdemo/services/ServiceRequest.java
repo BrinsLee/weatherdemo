@@ -68,7 +68,7 @@ public class ServiceRequest extends Service {
 
         String weatherid=intent.getStringExtra("weatherid");
         url="http://guolin.tech/api/weather?cityid="
-                +weatherid+"&key=34ea9718bb664420ba5b7ce53e1d160e";
+                +weatherid+"&key=5030dcb8ea054ddfae3467918610e56b";
         updateWeather(url);
         return myBinder;
     }
