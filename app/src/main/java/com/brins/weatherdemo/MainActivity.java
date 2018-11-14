@@ -1,29 +1,20 @@
 package com.brins.weatherdemo;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.Looper;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,28 +25,18 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.Text;
 import com.brins.weatherdemo.MyAdapter.DataBean;
 import com.brins.weatherdemo.MyAdapter.RecyclerViewAdapter;
-import com.brins.weatherdemo.db.Cities;
-import com.brins.weatherdemo.db.Countries;
 import com.brins.weatherdemo.db.MyLocation;
 import com.brins.weatherdemo.db.Provinces;
-import com.brins.weatherdemo.fragment.Fragment_area;
 import com.brins.weatherdemo.fragment.Fragment_show;
 import com.brins.weatherdemo.gson.Weather;
 import com.brins.weatherdemo.services.ServiceRequest;
@@ -68,7 +49,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 
 import org.litepal.crud.DataSupport;
-import org.litepal.tablemanager.Connector;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -117,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerViewAdapter adapter;
     @BindView(R.id.recycle)
     RecyclerView recyclerView;
-    final String ADDRESS="http://guolin.tech/api/china/";
     private int ProvinceId;
+    private int CityId;
     private boolean isFirst;
+    final String ADDRESS="http://guolin.tech/api/china/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,13 +166,12 @@ public class MainActivity extends AppCompatActivity {
 //启动服务
     public void StartService(String weatherid) {
 
+        Log.i("done","已调用StartService()");
         startService=new Intent(MainActivity.this,ServiceRequest.class);
         startService.putExtra("weatherid",weatherid);
         bindService(startService,connection, Context.BIND_AUTO_CREATE);
-        String responseText=PreferenceManager.getDefaultSharedPreferences(MainActivity.this).getString("weatherupdate",null);
+        String responseText=PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("weatherupdate",null);
         android.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-            /*fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.remove(fragment_show).commit();*/
         fragment_show=new Fragment_show(responseText);
         getFragmentManager().beginTransaction().replace(R.id.showlayout,fragment_show).commit();
     }
@@ -243,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
         LocationClientOption option=new LocationClientOption();
         option.setIsNeedAddress(true);
         option.setScanSpan(5000);
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
         locationClient.setLocOption(option);
 
     }
@@ -281,6 +262,8 @@ public class MainActivity extends AppCompatActivity {
     private void requestLocation() {
 
         locationClient.start();
+
+
     }
 
      class MyLocationClickListener implements BDLocationListener{
@@ -292,91 +275,46 @@ public class MainActivity extends AppCompatActivity {
             City=bdLocation.getCity().toString().substring(0,2);
             Log.i("city",City);
             Province=bdLocation.getProvince().toString().substring(0,2);
-            RequestFactory.queryProvinces(Province);
             District=bdLocation.getDistrict();
+            ProvinceId=RequestFactory.queryProvinces(Province);
+            List<Provinces> provincesList = DataSupport.findAll(Provinces.class);
+            CityId=RequestFactory.queryCities(ProvinceId,City);
             myLocation.setCity(City);
             myLocation.setProvince(Province);
             myLocation.setDistrict(District);
             myLocation.save();
-            /*SharedPreferences sharedPreferences=getSharedPreferences("share",MODE_PRIVATE);
-            isFirst=sharedPreferences.getBoolean("isFirstRun", true);
-            final SharedPreferences.Editor editor=sharedPreferences.edit();
-            Log.i("isFirst",isFirst+"");
-            if (isFirst) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        HttpUtil.sendRequest(ADDRESS, new Callback() {
-                            @Override
-                            public void onFailure(Call call, IOException e) {
-
-                            }
-
-                            @Override
-                            public void onResponse(Call call, Response response) throws IOException {
-
-                                String responseText = response.body().string();
-                                boolean result = false;
-                                result = Utility.handleProvince(responseText);
-                                if (result) {
-                                    List<Provinces> p = DataSupport.where("provinceName=?", Province).find(Provinces.class);
-                                    ProvinceId = p.get(0).getId();
-                                    String address = ADDRESS + ProvinceId;
-                                    HttpUtil.sendRequest(address, new Callback() {
-                                        @Override
-                                        public void onFailure(Call call, IOException e) {
-
-                                        }
-
-                                        @Override
-                                        public void onResponse(Call call, Response response) throws IOException {
-                                            String responseText = response.body().string();
-                                            boolean result = false;
-                                            result = Utility.handleCity(responseText, ProvinceId);
-                                            editor.putBoolean("isFirstRun",false);
-
-                                        }
-                                    });
-                                }
-
-                            }
-                        });
-                    }
-                }).start();
-            }*/
-            requestWeatherId(City);
+            requestWeatherId(CityId,City,ProvinceId);
             toolbar.setTitle(District);
-            //tv.setText(location.toString());
 
         }
     }
 
-    /**
-     * @param city ：传入城市，用于获取weatherid
-     */
-    private void requestWeatherId(String city) {
+    private void requestWeatherId(int citycode, final String cityname,int provincecode) {
         Log.i("done","已调用requestWeatherId()");
-        List<Cities> cityList=DataSupport.where("cityName =?",city).find(Cities.class);
-        Log.i("done",cityList.size()+"");
-        if (cityList.size()>0){
-            Log.i("done","cityList.size()>0");
-            int cityid=cityList.get(0).getId();
-            String weatherId=(DataSupport.where("cityId =?",String .valueOf(cityid)).find(Countries.class).get(0).getWeatherId());
+
+        if (citycode!=0){
+            Log.i("citycode",citycode+"");
+            String weatherId=RequestFactory.queryCountries(citycode,cityname,provincecode);
             SharedPreferences.Editor editor= PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
                     .edit();
             editor.putString("weatherid",weatherId);
             editor.apply();
+            editor.commit();
+            Log.i("weatherid",weatherId);
             air(weatherId);
 
-                StartService(weatherId);
+            StartService(weatherId);
 
 
+        }else {
+            Log.i("error","citycode=0");
         }
 
     }
 
     private void air(final String weatherId) {
 
+        Log.i("done","已调用air()");
         String url="http://guolin.tech/api/weather?cityid="
                 +weatherId+"&key=5030dcb8ea054ddfae3467918610e56b";
         HttpUtil.sendRequest(url, new Callback() {
@@ -411,28 +349,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                             adapter=new RecyclerViewAdapter(MainActivity.this,dataBeanList);
                             LinearLayoutManager linearLayout=new LinearLayoutManager(MainActivity.this);
-                            /*若要实现横向滚动则添加linearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);*/
                             recyclerView.setLayoutManager(linearLayout);
                             recyclerView.setAdapter(adapter);
                             Log.i("location","完成一次定位");
 
-                            /*View v_detail=LayoutInflater.from(MainActivity.this).inflate(R.layout.detial,detail_Layout,false);
-                            ImageView iv_icon=v_detail.findViewById(R.id.icon);
-                            TextView tv_title=v_detail.findViewById(R.id.detail_name);
-                            TextView tv_data=v_detail.findViewById(R.id.detail_data);
-                            iv_icon.setImageResource(R.drawable.ic_pcpo);
-                            tv_title.setText("降雨量/mm");
-                            tv_data.setText(weather.now.pcpn);
-                            detail_Layout.addView(v_detail);
-
-                            View v_detailwind=LayoutInflater.from(MainActivity.this).inflate(R.layout.detial,detail_Layout2,false);
-                            ImageView iv_iconwind=v_detail.findViewById(R.id.icon);
-                            TextView tv_titlewind=v_detail.findViewById(R.id.detail_name);
-                            TextView tv_datawind=v_detail.findViewById(R.id.detail_data);
-                            iv_iconwind.setImageResource(R.drawable.ic_wind);
-                            tv_titlewind.setText(weather.now.wind_dir);
-                            tv_datawind.setText(weather.now.wind_sc+"级");
-                            detail_Layout2.addView(v_detailwind);*/
 
 
                         }

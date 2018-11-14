@@ -31,7 +31,7 @@ public class Fragment_show extends Fragment {
 
     public Fragment_show(String weatherinfo) {
         this.weatherinfo = weatherinfo;
-        Log.i("weatherinfo1",weatherinfo);
+
 
     }
 

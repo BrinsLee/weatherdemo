@@ -1,7 +1,10 @@
 package com.brins.weatherdemo.util;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,113 +31,120 @@ import okhttp3.Response;
  */
 public class RequestFactory {
 
-
-    static String ADDRESS="http://guolin.tech/api/china/";
-    static int provinceid=0;
-    static int cityid=0;
+    static final String ADDRESS="http://guolin.tech/api/china/";
     //public static String weatherid;
 
-    public static void queryProvinces(String provincename) {
+    public static int queryProvinces(final String provincename) {
 
 
-        List<Provinces> provinces = DataSupport.findAll(Provinces.class);
-        if (provinces.size() > 0) {
-            provinces = DataSupport.select("id").where("provinceName=?", provincename).find(Provinces.class);
-            queryCities(provinces.get(0).getId(),provincename);
+        List<Provinces> provincesList = DataSupport.findAll(Provinces.class);
+        if (provincesList.size() > 0) {
+            int provinceid=(DataSupport.where("provinceName=?",provincename).find(Provinces.class)).get(0).getProvinceCode();
+            Log.i("provinceid_if",provinceid+"");
+            return provinceid;
         } else {
             String address = ADDRESS;
-            queryFromServer(address, "province",provincename);
+            final int[] provinceid = new int[1];
+           HttpUtil.sendRequest(address, new Callback() {
+
+               @Override
+               public void onFailure(Call call, IOException e) {
+
+                   Log.i("error",e.toString());
+               }
+
+               @Override
+               public void onResponse(Call call, Response response) throws IOException {
+
+                   String responseText = response.body().string();
+                   Log.i("response",responseText);
+                   Utility.handleProvince(responseText);
+                   provinceid[0] = (DataSupport.where("provinceName=?", provincename).find(Provinces.class)).get(0).getProvinceCode();
+                   Log.i("provinceid1", (DataSupport.where("provinceName=?", provincename).find(Provinces.class)).get(0).getProvinceCode() + "");
+                   return;
+               }
+           });
+            Log.i("provinceid_else", provinceid[0] +"");
+            return provinceid[0];
         }
     }
 
 
 
         /**
-         * @param address  传入url地址
-         * @param type 查询数据类型
-         * 当本地数据库无数据时，从服务器查询数据
-         */
-        private static void queryFromServer(String address, final String type , final String provincename) {
-
-            HttpUtil.sendRequest(address, new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                }
-
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-
-                    String responseText = response.body().string();
-                    boolean result = false;
-                    if ("province".equals(type)) {
-                        result = Utility.handleProvince(responseText);
-                        provinceid=(DataSupport.where("provinceName=?",provincename).find(Provinces.class)).get(0).getId();
-
-                    } else if ("city".equals(type)) {
-                        result = Utility.handleCity(responseText,provinceid);
-                    } else if ("country".equals(type)) {
-                        cityid=DataSupport.where("provinceId=?",String .valueOf(provinceid)).find(Cities.class).get(0).getId();
-                        result = Utility.handleCountry(responseText, cityid);
-                    }
-                    if (result) {
-
-                        if ("province".equals(type)) {
-                            queryProvinces(provincename);
-                        } else if ("city".equals(type)) {
-                            queryCities(provinceid,provincename);
-                        } else if ("country".equals(type)) {
-                            queryCountries(cityid,provincename);
-                        }
-                    }
-                }
-
-            });
-        }
-
-
-
-
-
-
-        /**
          * 查询所有区县数据，优先从数据库查询
          */
-        private static void  queryCountries(int cityid,String provincename) {
+        public static String   queryCountries(final int citycode, final String cityname, int provincecode) {
 
             List<Countries> countries;
-            countries=DataSupport.where("cityId=?",String .valueOf(cityid)).find(Countries.class);
+            countries=DataSupport.where("cityId=?",String .valueOf(citycode)).find(Countries.class);
             if (countries.size()>0){
-                countries.get(0).getWeatherId();
-
+                String weatherId=countries.get(0).getWeatherId();
+                Log.i("weatherId_if",weatherId);
+                return weatherId;
 
             }else {
-                int provinceCode=DataSupport.where("id=?",String .valueOf(provinceid)).find(Provinces.class).get(0).getProvinceCode();
-                int cityCode= DataSupport.where("id=?",String .valueOf(cityid)).find(Cities.class).get(0).getCityCode();
-                String address=ADDRESS+provinceCode+"/"+cityCode;
-                //Toast.makeText(Choosearea.this,address,Toast.LENGTH_LONG).show();
-                queryFromServer(address,"country",provincename);
+                String address = ADDRESS + provincecode+"/"+citycode;
+                final String[] weatherId = new String[1];
+                HttpUtil.sendRequest(address, new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        Log.i("error",e.toString());
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+
+                        String responseText = response.body().string();
+                        Utility.handleCountry(responseText,citycode);
+                            weatherId[0] = (DataSupport.where("countryName=?", cityname).find(Countries.class)).get(0).getWeatherId();
+
+                    }
+                });
+                Log.i("weatherId_else", weatherId[0]);
+                return weatherId[0];
+            }
             }
 
-        }
+
 
         /**
          * 查询所有城市信息，优先从数据库查询
          */
-        public static void queryCities(int provinceid, String provincename) {
-            List<Cities> cities;
-            cities=DataSupport.where("provinceId=?",String .valueOf(provinceid)).find(Cities.class);
-            if (cities.size()>0){
-                queryCountries(cities.get(0).getId(),provincename);
-            }else {
-                int provinceCode=DataSupport.where("id=?",String .valueOf(provinceid)).find(Provinces.class)
-                        .get(0).getProvinceCode();
-                String address=ADDRESS+provinceCode;
-                //Toast.makeText(Choosearea.this,address,Toast.LENGTH_LONG).show();
-                queryFromServer(address,"city",provincename);
+        public static int queryCities(final int provinceid, final String cityname) {
+            if (provinceid == 0) {return 0;}
+                List<Cities> cities;
+                cities = DataSupport.where("provinceId=?", String.valueOf(provinceid)).find(Cities.class);
+                if (cities.size() > 0) {
+                    int cityid = cities.get(0).getCityCode();
+                    Log.i("cityid_if", cityid + "");
+                    return cityid;
+
+
+                } else {
+                    String address = ADDRESS + provinceid;
+                    final int[] cityid = new int[1];
+                    HttpUtil.sendRequest(address, new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+                            Log.i("error", e.toString());
+
+                        }
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+
+                            String responseText = response.body().string();
+                            Utility.handleCity(responseText, provinceid);
+                            cityid[0] = (DataSupport.where("cityName=?", cityname).find(Cities.class)).get(0).getCityCode();
+                        }
+                    });
+                    Log.i("cityid_else", cityid[0] + "");
+                    return cityid[0];
+
+                }
+
             }
-
-        }
-
 
 }

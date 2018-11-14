@@ -44,9 +44,10 @@ public class ServiceRequest extends Service {
 
                 final  String responseText=response.body().string();
                 if (responseText!=null){
-                    SharedPreferences.Editor editor= PreferenceManager.getDefaultSharedPreferences(ServiceRequest.this).edit();
+                    SharedPreferences.Editor editor= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
                     editor.putString("weatherupdate",responseText);
                     editor.apply();
+                    editor.commit();
                 }
             }
         });

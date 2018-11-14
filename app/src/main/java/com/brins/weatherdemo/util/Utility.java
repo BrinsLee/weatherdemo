@@ -1,6 +1,7 @@
 package com.brins.weatherdemo.util;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.brins.weatherdemo.db.Cities;
 import com.brins.weatherdemo.db.Countries;
@@ -39,9 +40,9 @@ public class Utility {
             }catch (Exception e)
             {
                 e.printStackTrace();
+                return false;
             }
-        }
-        return false;
+        } else {return false;}
 
     }
 
@@ -67,9 +68,10 @@ public class Utility {
                 return true;
             } catch (JSONException e) {
                 e.printStackTrace();
+                return false;
             }
         }
-        return false;
+        else return false;
     }
 
 
@@ -97,9 +99,10 @@ public class Utility {
                 return true;
             } catch (JSONException e) {
                 e.printStackTrace();
+                return false;
             }
         }
-        return false;
+        else return false;
     }
 
     public static Weather handleWather(String response){
